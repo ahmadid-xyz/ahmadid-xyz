@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ahmadxyz</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color: #ffffff;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      grid-template-rows: auto 1fr auto;
+      gap: 20px;
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .header {
+      grid-column: span 2;
+      text-align: center;
+      padding: 20px 0;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+    }
+
+    .header h1 {
+      font-size: 2.5rem;
+      margin: 0;
+    }
+
+    .profile-pic {
+      grid-row: span 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .profile-pic img {
+      border: 5px solid #ffffff;
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+    }
+
+    .about {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .about h2 {
+      margin-top: 0;
+    }
+
+    .skills {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .skills ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .skills ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer {
+      grid-column: span 2;
+      text-align: center;
+      padding: 10px 0;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      font-size: 0.9rem;
+    }
+
+    .social-links {
+      margin-top: 10px;
+    }
+
+    .social-links a {
+      margin: 0 10px;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 1.2rem;
+      transition: color 0.3s ease;
+    }
+
+    .social-links a:hover {
+      color: #ffcc00;
+    }
+
+    .social-links a .icon {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+      }
+
+      .profile-pic {
+        grid-row: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>AHMADXYZ</h1>
+      <p>Website Sc Kodokbotz</p>
+    </div>
+
+    <div class="profile-pic">
+      <img src="thumbnail.jpg" alt="Profile Picture">
+    </div>
+
+    <div class="INFORMASI">
+      <h2>INFORMASI</h2>
+      <p>Hai Selamat Datang! Kami Menyediakan Beberapa Produk Yang Mungkin Anda Suka. Jika Ada Kesalahan Silahkan Hubungi Kami  Di Kolom Yang Sudah Disediakan.</p>
+    </div>
+
+    <div class="PRODUK">
+      <h2>PRODUK SAYA</h2>
+      <ul>
+        <li>VPS DIGITAL</li>
+        <li>ADMIN PANEL</li>
+        <li>PANEL UNLI</li>
+        <li>NOKOS</li>
+        <li>DLL</li>
+      </ul>
+    </div>
+
+    <div class="footer">
+      <p>&copy; 2024-2025 AHMADXYZ</p>
+      <div class="social-links">
+        <a href="https://wa.me/6281527100923" target="_blank" title="WhatsApp">
+          <span class="icon">📱</span> WhatsApp
+        </a>
+        <a href="https://youtube.com/@treizker?si=ZkTXRr4T-CJMP6aY" target="_blank" title="YouTube">
+          <span class="icon">🎥</span> YouTube
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=100085874525641" target="_blank" title="Facebook">
+          <span class="icon">📘</span> Facebook
+        </a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
