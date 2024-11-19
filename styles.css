@@ -1,0 +1,170 @@
+/* General Styles */
+body {
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #121212;
+    overflow-x: hidden;
+}
+
+h1, h2, h3 {
+    color: #00ffcc;
+}
+
+p {
+    color: #ccc;
+}
+
+/* Hero Section */
+.hero {
+    background: url('https://via.placeholder.com/1920x1080') center/cover no-repeat;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.overlay {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    width: 100%;
+}
+
+.title {
+    font-size: 4em;
+    animation: glow 2s infinite;
+}
+
+.subtitle {
+    margin-top: 10px;
+    font-size: 1.5em;
+}
+
+.btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #00ffcc;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: transform 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+}
+
+/* About Section */
+.about-section {
+    padding: 50px 20px;
+    background: #1e1e1e;
+    text-align: center;
+}
+
+.about-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.card {
+    background: #333;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+/* Products Section */
+.products-section {
+    padding: 50px 20px;
+    background: #252525;
+    text-align: center;
+}
+
+.product-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.product-card {
+    background: #333;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+.product-card img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 50px 20px;
+    background: #121212;
+    text-align: center;
+}
+
+.social-icons {
+    margin: 20px 0;
+}
+
+.social-icons a {
+    margin: 0 15px;
+    color: #00ffcc;
+    font-size: 2em;
+    transition: transform 0.3s;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);
+}
+
+/* Footer */
+footer {
+    padding: 20px;
+    background: #1e1e1e;
+    color: #ccc;
+    text-align: center;
+}
+
+/* Animations */
+@keyframes glow {
+    0%, 100% {
+        text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00ffcc;
+    }
+    50% {
+        text-shadow: 0 0 20px #00ffcc, 0 0 40px #00ffcc, 0 0 60px #00ffcc;
+    }
+    
+.spin {
+    animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+}
