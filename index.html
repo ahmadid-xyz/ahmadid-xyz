@@ -1,302 +1,364 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AhmadXyz</title>
-  <style>
-    /* Global Styles */
-    body {
-      margin: 0;
-      font-family: 'Arial', sans-serif;
-      background: #1c1c1c;
-      color: #ffffff;
-      overflow-x: hidden;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Website jualan dan informasi seputar source code dengan tema programmer ala hacker">
+    <title>AhmadXyz ID</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'JetBrains Mono', monospace;
+        }
 
-    a {
-      color: #00e7ff;
-      text-decoration: none;
-    }
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+            line-height: 1.5;
+        }
 
-    a:hover {
-      color: #ff00c3;
-    }
+        /* Navbar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: #1a1a1a;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
 
-    h1, h2, h3 {
-      margin: 0;
-    }
+        nav .logo {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #00ff00;
+            text-transform: uppercase;
+        }
 
-    /* Navbar */
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 30px;
-      background: #121212;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
-    }
+        nav .menu {
+            display: flex;
+            list-style: none;
+        }
 
-    .navbar ul {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-      margin: 0;
-      padding: 0;
-    }
+        nav .menu li {
+            margin-left: 30px;
+        }
 
-    .navbar ul li a {
-      color: #fff;
-      padding: 8px 15px;
-      border-radius: 5px;
-      transition: background 0.3s;
-    }
+        nav .menu li a {
+            color: #e0e0e0;
+            text-decoration: none;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            padding: 10px;
+            transition: color 0.3s ease-in-out;
+        }
 
-    .navbar ul li a:hover {
-      background: #00e7ff;
-      color: #000;
-    }
+        nav .menu li a:hover {
+            color: #00ff00;
+        }
 
-    /* Hero Section */
-    .hero {
-      height: 100vh;
-      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url('thumbnail.jpg') no-repeat center center/cover;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: url('thumbnail.jpg') no-repeat center center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
 
-    .hero h1 {
-      font-size: 4rem;
-      animation: fadeInDown 2s ease-out;
-    }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.6);
+        }
 
-    .hero p {
-      margin: 10px 0 20px;
-      font-size: 1.5rem;
-      animation: fadeInUp 2s ease-out;
-    }
+        .hero .content {
+            z-index: 1;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+        }
 
-    .hero .btn {
-      padding: 15px 30px;
-      background: #00e7ff;
-      color: #000;
-      font-size: 1.2rem;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      animation: fadeInUp 2s ease-out 0.5s;
-    }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+            color: #00ff00;
+        }
 
-    .hero .btn:hover {
-      background: #ff00c3;
-      color: #fff;
-    }
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
 
-    /* About Section */
-    .about {
-      padding: 100px 30px;
-      text-align: center;
-      background: #1a1a1a;
-    }
+        .btn {
+            background-color: #00ff00;
+            color: black;
+            padding: 12px 25px;
+            font-size: 1rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: background-color 0.3s ease;
+        }
 
-    .about h2 {
-      font-size: 2.5rem;
-      background: linear-gradient(90deg, #00e7ff, #ff00c3);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 20px;
-    }
+        .btn:hover {
+            background-color: #00cc00;
+        }
 
-    .about p {
-      font-size: 1.2rem;
-      line-height: 1.8;
-      max-width: 800px;
-      margin: 0 auto;
-    }
+        /* About Section */
+        .about-section {
+            padding: 60px 20px;
+            background-color: #1a1a1a;
+            text-align: center;
+        }
 
-    /* Skills Section */
-    .skills {
-      padding: 100px 30px;
-      background: #121212;
-      text-align: center;
-    }
+        .about-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            font-weight: 600;
+            color: #00ff00;
+            letter-spacing: 1px;
+        }
 
-    .skills h2 {
-      font-size: 2.5rem;
-      margin-bottom: 30px;
-    }
+        .about-cards {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
 
-    .skills .skill-box {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
+        .card {
+            background-color: #222;
+            width: 280px;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
 
-    .skills .skill {
-      background: #1f1f1f;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-      transition: transform 0.3s;
-    }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+        }
 
-    .skills .skill:hover {
-      transform: translateY(-10px);
-    }
+        .card i {
+            font-size: 3rem;
+            color: #00ff00;
+            margin-bottom: 20px;
+        }
 
-    .skills .skill h3 {
-      margin-bottom: 10px;
-    }
+        .card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: #fff;
+        }
 
-    /* Contact Section */
-    .contact {
-      padding: 100px 30px;
-      text-align: center;
-      background: #1a1a1a;
-    }
+        .card p {
+            font-size: 1rem;
+            color: #c0c0c0;
+        }
 
-    .contact h2 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-    }
+        /* Products Section */
+        .products-section {
+            padding: 80px 20px;
+            background-color: #222;
+        }
 
-    .contact form {
-      max-width: 500px;
-      margin: 0 auto;
-    }
+        .products-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            font-weight: 600;
+            text-align: center;
+            color: #00ff00;
+        }
 
-    .contact form input, .contact form textarea {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-      border: none;
-      border-radius: 5px;
-      background: #121212;
-      color: #fff;
-    }
+        .product-cards {
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
 
-    .contact form button {
-      padding: 10px 20px;
-      background: #00e7ff;
-      color: #000;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
+        .product-card {
+            background-color: #333;
+            width: 250px;
+            padding: 20px;
+            margin: 20px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
 
-    .contact form button:hover {
-      background: #ff00c3;
-      color: #fff;
-    }
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
 
-    /* Footer */
-    .footer {
-      padding: 20px;
-      text-align: center;
-      background: #000;
-    }
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
 
-    .footer p {
-      margin: 0;
-      font-size: 0.9rem;
-    }
+        .product-card h3 {
+            font-size: 1.2rem;
+            color: #00ff00;
+            margin-bottom: 10px;
+        }
 
-    /* Animations */
-    @keyframes fadeInDown {
-      from {
-        opacity: 0;
-        transform: translateY(-50px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+        .product-card p {
+            font-size: 1rem;
+            color: #e0e0e0;
+            margin-bottom: 20px;
+        }
 
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(50px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-  </style>
+        .product-card .btn {
+            background-color: #00ff00;
+            color: black;
+            padding: 8px 16px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .product-card .btn:hover {
+            background-color: #00cc00;
+        }
+
+        /* Social Media Section */
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .social-icons a {
+            color: #e0e0e0;
+            font-size: 2.5rem;
+            margin: 0 20px;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #00ff00;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            padding: 20px;
+            text-align: center;
+            color: #e0e0e0;
+        }
+
+        footer p {
+            font-size: 1rem;
+        }
+
+    </style>
 </head>
 <body>
 
-  <!-- Navbar -->
-  <div class="navbar">
-    <div class="logo">My Profile</div>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </div>
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">AHMAD XYZ ID</div>
+        <ul class="menu">
+            <li><a href="#about">Tentang</a></li>
+            <li><a href="#products">Produk</a></li>
+            <li><a href="#contact">Hubungi</a></li>
+        </ul>
+    </nav>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <h1>Selamat Datang Di Ahmad ID</h1>
-    <p>A passionate developer building modern web experiences.</p>
-    <button class="btn">Learn More</button>
-  </section>
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="content">
+            <h1>Information AhmadXyz ID</h1>
+            <p>Menyediakan Layanan Kebutuhan Bot WhatsApp</p>
+            <a href="#about" class="btn">Jelajahi</a>
+        </div>
+    </header>
 
-  <!-- About Section -->
-  <section id="about" class="about">
-    <h2>About Me</h2>
-    <p>I am a software developer with expertise in modern web technologies, creating beautiful and functional websites that leave an impact.</p>
-  </section>
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <h2>Tentang Kebutuhan Hosting</h2>
+        <p>Kami melayani beberapa hal yang mungkin dapat membantu anda..</p>
+        <div class="about-cards">
+            <div class="card">
+                <i class="fas fa-code"></i>
+                <h3>Rename & Recode Sc</h3>
+                <p>Melayani jasa rename & recode script bot.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-laptop-code"></i>
+                <h3>VPS</h3>
+                <p>Menyediakan Virtual Private Server(VPS) Dengan Harga Terjangkau.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-users"></i>
+                <h3>Komunitas</h3>
+                <p>Bergabung dengan komunitas programmer untuk berbagi pengalaman.</p>
+            </div>
+        </div>
+    </section>
 
-  <!-- Skills Section -->
-  <section id="skills" class="skills">
-    <h2>My Skills</h2>
-    <div class="skill-box">
-      <div class="skill">
-        <h3>HTML</h3>
-        <p>Building robust structure and semantics for the web.</p>
-      </div>
-      <div class="skill">
-        <h3>CSS</h3>
-        <p>Crafting visually appealing and responsive designs.</p>
-      </div>
-      <div class="skill">
-        <h3>JavaScript</h3>
-        <p>Adding interactivity and functionality to websites.</p>
-      </div>
-      <div class="skill">
-        <h3>React</h3>
-        <p>Developing dynamic and scalable front-end applications.</p>
-      </div>
-    </div>
-  </section>
+    <!-- Products Section -->
+    <section id="products" class="products-section">
+        <h2>Produk Populer</h2>
+        <div class="product-cards">
+            <div class="product-card">
+                <img src="sc.jpg" alt="Produk 1">
+                <h3>SC BOT WHATSAPP</h3>
+                <p>Sc Bot WhatsApp Adalah Scrip Yang Dijalankan Menggunakan Bahasa JavaScrip.</p>
+                <a href="https://wa.me/6281527100923" class="btn">Beli Sekarang</a>
+            </div>
+            <div class="product-card">
+                <img src="vps.jpg" alt="Produk 2">
+                <h3>VPS (Virtual Private Server)</h3>
+                <p>Vps Dengan Harga Terjangkau Yang Mungkin Dapat Membantu Anda</p>
+                <a href="https://wa.me/6281527100923" class="btn">Beli Sekarang</a>
+            </div>
+            <div class="product-card">
+                <img src="panel.jpg" alt="Produk 3">
+                <h3>Panel Pterodacly</h3>
+                <p>Webs Pihak Ketiga Untuk Menjalankan Bot WhatsApp Anda</p>
+                <a href="https://wa.me/6281527100923" class="btn">Beli Sekarang</a>
+            </div>
+        </div>
+    </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="contact">
-    <h2>Contact Me</h2>
-    <form>
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea rows="5" placeholder="Your Message"></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <h2>Hubungi Kami</h2>
+        <p>Untuk pertanyaan lebih lanjut atau pemesanan, hubungi kami di media sosial:</p>
+        <div class="social-icons">
+            <a href="https://wa.me/6281527100923" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://youtube.com/@treizker?si=kuH6aUbVnHLpbidv" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+    </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <p>&copy; 2024 Your Name. All rights reserved.</p>
-  </footer>
+    <!-- Footer -->
+    <footer>
+        <p>© AHMAD 2024-2025</p>
+    </footer>
 
 </body>
 </html>
+
