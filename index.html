@@ -3,76 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Website jualan dan informasi seputar source code dengan tema programmer ala hacker">
+    <meta name="description" content="Website Profile AhmadXyz ID">
     <title>AhmadXyz ID</title>
     <link rel="icon" href="image/favico.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* CSS di sini tidak berubah */
+        /* GLOBAL STYLE */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'JetBrains Mono', monospace;
+            font-family: 'Press Start 2P', cursive;
         }
 
         body {
-            background-color: #121212;
-            color: #e0e0e0;
-            line-height: 1.5;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            color: #00ffcc;
+            overflow-x: hidden;
         }
 
+        /* LOADING SCREEN */
+        #loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        #loading .text {
+            font-size: 2rem;
+            color: #00ffcc;
+            text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #ff00ff;
+            animation: glow 1.5s infinite alternate;
+        }
+
+        @keyframes glow {
+            0% { text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc; }
+            50% { text-shadow: 0 0 20px #ff00ff, 0 0 30px #ff00ff; }
+            100% { text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc; }
+        }
+
+        #loading .spinner {
+            width: 80px;
+            height: 80px;
+            border: 10px solid #121212;
+            border-top: 10px solid #00ffcc;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-top: 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* ANIMATION TO FADE OUT */
+        .hidden {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s, visibility 0.5s;
+        }
+
+        /* MAIN PAGE CONTENT */
+        .hidden-content {
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+        }
+
+        .hidden-content.show {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        /* REST OF YOUR CSS */
         nav {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 40px;
-            background-color: #1a1a1a;
-            position: sticky;
-            top: 0;
-            z-index: 10;
+            border-bottom: 2px solid #00ffcc;
         }
 
         nav .logo {
-            font-size: 2rem;
-            font-weight: 600;
-            color: #00ff00;
-            text-transform: uppercase;
+            font-size: 1.8rem;
+            color: #ff00ff;
+            text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+            animation: glow 1.5s infinite alternate;
         }
 
         nav .menu {
-            display: flex;
             list-style: none;
+            display: flex;
         }
 
         nav .menu li {
-            margin-left: 30px;
+            margin: 0 15px;
         }
 
         nav .menu li a {
-            color: #e0e0e0;
             text-decoration: none;
-            font-weight: 500;
-            letter-spacing: 0.5px;
-            padding: 10px;
+            color: #00ffcc;
+            font-size: 1rem;
             transition: color 0.3s ease-in-out;
         }
 
         nav .menu li a:hover {
-            color: #00ff00;
+            color: #ff00ff;
         }
 
         .hero {
             height: 100vh;
-            background: url('thumbnail.jpg') no-repeat center center/cover;
+            background: url('cyber-bg.jpg') no-repeat center center/cover;
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
-            color: white;
             position: relative;
-            overflow: hidden;
         }
 
         .hero::before {
@@ -80,137 +136,256 @@
             position: absolute;
             top: 0;
             left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0, 0, 0, 0.6);
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1;
         }
 
         .hero .content {
-            z-index: 1;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+            position: relative;
+            z-index: 2;
+            color: #fff;
         }
 
         .hero h1 {
             font-size: 3rem;
-            margin-bottom: 15px;
-            font-weight: 700;
-            color: #00ff00;
+            color: #00ffcc;
+            animation: glow 2s infinite alternate;
         }
 
         .hero p {
-            font-size: 1.1rem;
-            margin-bottom: 20px;
+            font-size: 1.2rem;
+            margin: 20px 0;
         }
 
         .btn {
-            background-color: #00ff00;
-            color: black;
+            display: inline-block;
             padding: 12px 25px;
             font-size: 1rem;
+            color: #000;
+            background: #00ffcc;
             text-decoration: none;
-            border-radius: 5px;
-            font-weight: 600;
-            letter-spacing: 1px;
-            transition: background-color 0.3s ease;
+            border-radius: 8px;
+            text-shadow: 0 0 5px #000;
+            transition: transform 0.3s, background 0.3s;
         }
 
         .btn:hover {
-            background-color: #00cc00;
+            background: #ff00ff;
+            transform: scale(1.1);
         }
+        
+    /* BACKGROUND ANIMASI FUTURISTIK */
+    #products {
+        position: relative;
+        padding: 50px;
+        text-align: center;
+        color: #fff;
+        overflow: hidden;
+        z-index: 1;
+    }
 
-        .navigation-buttons {
-            margin-top: 20px;
-        }
+    /* GRADIENT BERGERAK */
+    #products::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(45deg, #00b5ff, #9b00ff, #ff00d4, #00ffb5);
+        background-size: 400% 400%;
+        animation: gradientMovement 10s ease infinite;
+        z-index: -2;
+    }
 
-        .navigation-buttons .btn {
-            margin-right: 15px;
+    @keyframes gradientMovement {
+        0% {
+            background-position: 0% 50%;
         }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    /* ANIMASI PARTIKEL FANTASY */
+    #products::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('https://www.transparenttextures.com/patterns/cubes.png');
+        opacity: 0.1;
+        z-index: -1;
+        animation: particlesMove 30s linear infinite;
+    }
+
+    @keyframes particlesMove {
+        0% {
+            transform: translateX(0) translateY(0);
+        }
+        100% {
+            transform: translateX(-2000px) translateY(2000px);
+        }
+    }
+
+    /* KONTAINER PRODUK */
+    #products .product-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        position: relative; /* Supaya produk tetap di atas */
+        z-index: 1;
+    }
+
+    /* KOTAK PRODUK */
+    #products .product-container > div {
+        background: rgba(0, 0, 0, 0.7);
+        padding: 20px;
+        border-radius: 10px;
+        width: 300px;
+        text-align: center;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    }
+
+    #products .product-container > div img {
+        width: 100%;
+        border-radius: 10px;
+        margin-bottom: 15px;
+    }
+
+    #products .product-container > div h3 {
+        color: #00ffcc;
+        margin-bottom: 10px;
+    }
+
+    #products .product-container > div p {
+        color: #fff;
+        font-size: 0.9rem;
+        margin-bottom: 15px;
+    }
+
+    #products .product-container > div a {
+        display: inline-block;
+        padding: 12px 25px;
+        font-size: 1rem;
+        color: #000;
+        background: #00ffcc;
+        text-decoration: none;
+        border-radius: 8px;
+        text-shadow: 0 0 5px #000;
+        transition: transform 0.3s, background 0.3s;
+    }
+
+    #products .product-container > div a:hover {
+        background: #ff00ff;
+        transform: scale(1.1);
+    }
     </style>
 </head>
 <body>
-    <!-- Navbar -->
-    <nav>
-        <div class="logo">AHMAD XYZ ID</div>
-        <ul class="menu">
-            <li><a href="#about">Tentang</a></li>
-            <li><a href="#products">Produk</a></li>
-            <li><a href="#contact">Hubungi</a></li>
-        </ul>
-    </nav>
+    <!-- LOADING SCREEN -->
+    <div id="loading">
+        <div class="text"> LOADING...</div>
+        <div class="spinner"></div>
+    </div>
 
-    <!-- Hero Section -->
-    <header class="hero">
-        <div class="content">
-            <h1>Information AhmadXyz ID</h1>
-            <p>Menyediakan Layanan Kebutuhan Bot WhatsApp</p>
-            <a href="#about" class="btn">Jelajahi</a>
-            <div class="navigation-buttons">
-                <a href="#products" class="btn">Produk</a>
-                <a href="#contact" class="btn">Hubungi</a>
+    <!-- MAIN CONTENT -->
+    <div class="hidden-content">
+        <nav>
+            <div class="logo">AHMAD XYZ</div>
+            <ul class="menu">
+                <li><a href="#about">About</a></li>
+                <li><a href="#products">ProduK</a></li>
+                <li><a href="#contact">Kontak</a></li>
+            </ul>
+        </nav>
+
+        <header class="hero">
+            <div class="content">
+                <h1>Selamat Datang di AhmadXyz</h1>
+                <p>Webs Hosting Dan Edukasi</p>
+                <a href="#products" class="btn">Explore</a>
             </div>
+        </header>
+
+        <!-- Produk Section -->
+        <section id="products" style="padding: 50px; text-align: center;">
+            <h2 style="color: #00ffcc; font-size: 2rem; margin-bottom: 20px;">INFORMATION</h2>
+            <p style="color: #fff; font-size: 1.2rem;">Ahmadxyz adalah seorang pengembang yang ahli dalam membuat bot untuk platform WhatsApp. Salah satu karyanya yang paling terkenal adalah SC bot WhatsApp bernama Kodokbotz. Kodokbotz adalah bot yang dirancang untuk membantu pengguna dalam berbagai kebutuhan, seperti memberikan informasi, menjawab pertanyaan, dan bahkan menghibur dengan lelucon lucu! Bot ini sangat mudah digunakan, cukup tambahkan nomor WhatsApp Kodokbotz, dan Anda siap berinteraksi.
+Dengan fitur-fitur canggih dan respons yang cepat, Kodokbotz menjadi teman yang asyik di WhatsApp. Jadi, jika Anda butuh teman ngobrol atau informasi cepat, Kodokbotz siap menemani!</p>
+            <!-- Add your product details here -->
+        </section>
+        
+        <section id="products" style="padding: 10px; text-align: center;">
+    <h2 style="color: #00ffcc; font-size: 2rem; margin-bottom: 20px;">Produk Yang Tersedia</h2>
+    <p style="color: #fff; font-size: 1.2rem; margin-bottom: 10px;">Berikut Adalah Produk Produk Yang Tesedia Di Webs Kami.</p>
+    <div style="display: flex; justify-content: center; gap: 5px; flex-wrap: wrap;">
+        <!-- Product 1 -->
+        <div style="background: linear-gradient(135deg, #1a1a1a, #2a2a2a); padding: 20px; border-radius: 10px; width: 300px; text-align: center; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);">
+            <img src="sc.jpg" alt="SC KODOKBOTZ" style="width: 100%; border-radius: 10px; margin-bottom: 15px;">
+            <h3 style="color: #00ffcc; margin-bottom: 10px;">Sc Bot WhatsApp</h3>
+            <p style="color: #fff; font-size: 0.9rem; margin-bottom: 15px;">Ini Adalah Kodokbotz Yang Dirancang Menggunakan Bahasa JavaScrip.</p>
+            <a href="https://wa.me/6281527100923" class="btn" style="display: inline-block; padding: 12px 25px; font-size: 1rem; color: #000; background: #00ffcc; text-decoration: none; border-radius: 8px; text-shadow: 0 0 5px #000; transition: transform 0.3s, background 0.3s;">Klik Disini</a>
         </div>
-    </header>
-
-    <!-- About Section -->
-    <section id="about" class="about-section">
-        <h2>Tentang Kebutuhan Hosting</h2>
-        <p>Kami melayani beberapa hal yang mungkin dapat membantu anda..</p>
-        <div class="about-cards">
-            <div class="card">
-                <i class="fas fa-code"></i>
-                <h3>Rename & Recode Sc</h3>
-                <p>Melayani jasa rename & recode script bot.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-laptop-code"></i>
-                <h3>VPS</h3>
-                <p>Menyediakan Virtual Private Server(VPS) Dengan Harga Terjangkau.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-users"></i>
-                <h3>Komunitas</h3>
-                <p>Bergabung dengan komunitas programmer untuk berbagi pengalaman.</p>
-            </div>
+        
+        <!-- Product 2 -->
+        <div style="background: linear-gradient(135deg, #1a1a1a, #2a2a2a); padding: 20px; border-radius: 10px; width: 300px; text-align: center; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);">
+            <img src="panel.jpg" alt="Panel Pterodacly" style="width: 100%; border-radius: 10px; margin-bottom: 15px;">
+            <h3 style="color: #00ffcc; margin-bottom: 10px;">PanelBot Wa</h3>
+            <p style="color: #fff; font-size: 0.9rem; margin-bottom: 15px;">Tersedia Juga Adp Dan Panel Bot WhatApp.</p>
+            <a href="https://wa.me/6281527100923" class="btn" style="display: inline-block; padding: 12px 25px; font-size: 1rem; color: #000; background: #00ffcc; text-decoration: none; border-radius: 8px; text-shadow: 0 0 5px #000; transition: transform 0.3s, background 0.3s;">Klik Disini</a>
         </div>
-    </section>
 
-    <!-- Products Section -->
-    <section id="products" class="products-section">
-        <h2>Produk Populer</h2>
-        <div class="product-cards">
-            <div class="product-card">
-                <img src="sc.jpg" alt="Produk 1">
-                <h3>SC BOT WHATSAPP</h3>
-                <p>Sc Bot WhatsApp Adalah Scrip Yang Dijalankan Menggunakan Bahasa JavaScrip.</p>
-                <a href="https://wa.me/6281527100923" class="btn">Beli Sekarang</a>
-            </div>
-            <div class="product-card">
-                <img src="vps.jpg" alt="Produk 2">
-                <h3>VPS (Virtual Private Server)</h3>
-                <p>Vps Dengan Harga Terjangkau Yang Mungkin Dapat Membantu Anda</p>
-                <a href="https://wa.me/6281527100923" class="btn">Beli Sekarang</a>
-            </div>
-            <div class="product-card">
-                <img src="panel.jpg" alt="Produk 3">
-                <h3>Panel Pterodacly</h3>
-                <p>Webs Pihak Ketiga Untuk Menjalankan Bot WhatsApp Anda</p>
-                <a href="https://wa.me/6281527100923" class="btn">Beli Sekarang</a>
-            </div>
+        <!-- Product 3 -->
+        <div style="background: linear-gradient(135deg, #1a1a1a, #2a2a2a); padding: 20px; border-radius: 10px; width: 300px; text-align: center; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);">
+            <img src="vps.jpg" alt="VPS" style="width: 100%; border-radius: 10px; margin-bottom: 15px;">
+            <h3 style="color: #00ffcc; margin-bottom: 10px;">VPS(Virtual Private Server)</h3>
+            <p style="color: #fff; font-size: 0.9rem; margin-bottom: 15px;">Menyediakan Virtual Private Server(VPS).</p>
+            <a href="https://wa.me/6281527100923" class="btn" style="display: inline-block; padding: 12px 25px; font-size: 1rem; color: #000; background: #00ffcc; text-decoration: none; border-radius: 8px; text-shadow: 0 0 5px #000; transition: transform 0.3s, background 0.3s;">Klik Disini</a>
         </div>
-    </section>
+        
+        <!-- Produk 4 -->
+        <div style="background: linear-gradient(135deg, #1a1a1a, #2a2a2a); padding: 20px; border-radius: 10px; width: 300px; text-align: center; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);">
+            <img src="no.jpg" alt="NOKOS" style="width: 100%; border-radius: 10px; margin-bottom: 15px;">
+            <h3 style="color: #00ffcc; margin-bottom: 10px;">NOKOS</h3>
+            <p style="color: #fff; font-size: 0.9rem; margin-bottom: 15px;">Dapatkan Nomor Dengan Harga Murah.</p>
+            <a href="https://wa.me/6281527100923" class="btn" style="display: inline-block; padding: 12px 25px; font-size: 1rem; color: #000; background: #00ffcc; text-decoration: none; border-radius: 8px; text-shadow: 0 0 5px #000; transition: transform 0.3s, background 0.3s;">Klik Disini</a>
+            </div>
+    </div>
+</section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
+<section id="contact" class="contact-section">
         <h2>Hubungi Kami</h2>
         <p>Untuk pertanyaan lebih lanjut atau pemesanan, hubungi kami di media sosial:</p>
         <div class="social-icons">
-            <a href="https://wa.me/6281527100923" target="_blank"><i class="fab fa-whatsapp"></i></a>
-            <a href="https://youtube.com/@treizker?si=kuH6aUbVnHLpbidv" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://wa.me/6281527100923" target="_blank"><i class="fab fa-whatsapp">WhatsApp</i></a>
+            <a href="https://youtube.com/@treizker?si=kuH6aUbVnHLpbidv" target="_blank"><i class="fab fa-youtube">Youtube</i></a>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
+    </div>
+
+    <script>
+        // Loading animation script
+        window.addEventListener('load', () => {
+            const loading = document.getElementById('loading');
+            const content = document.querySelector('.hidden-content');
+
+            setTimeout(() => {
+                loading.classList.add('hidden');
+                content.classList.add('show');
+            }, 2000); // Adjust delay as needed (2000ms = 2 seconds)
+        });
+    </script>
+        <footer>
         <p>© AHMAD 2024-2025</p>
     </footer>
 </body>
