@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AhmadXyz - Artikel dan Download Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1e1e2e;
+            color: #fff;
+            overflow: auto;
+        }
+
+        /* Loading Screen */
+        #loading {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: #1e1e2e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            animation: fadeOut 1s ease-out 3.5s forwards;
+        }
+        #loading.hidden {
+            display: none;
+        }
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+        .particle {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #ff512f;
+            border-radius: 50%;
+            animation: particleAnimation 3s linear infinite;
+        }
+        @keyframes particleAnimation {
+            0% {
+                transform: translateY(0) translateX(0) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(calc(50vw - 100%)) scale(0.5);
+                opacity: 0;
+            }
+        }
+        .particles .particle:nth-child(even) {
+            background: #dd2476;
+        }
+        #loading h1 {
+            font-size: 3em;
+            font-weight: bold;
+            color: #ff512f;
+            text-transform: uppercase;
+            animation: textPulse 1.5s infinite;
+        }
+        @keyframes textPulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 0.8;
+            }
+        }
+        @keyframes fadeOut {
+            to { opacity: 0; visibility: hidden; }
+        }
+
+        /* Header and Navigation */
+        header {
+            background: linear-gradient(45deg, #ff512f, #dd2476);
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #333;
+            padding: 10px 0;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2em;
+        }
+        nav a:hover {
+            color: #ff512f;
+        }
+
+        /* Article Section */
+        .article-section {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+        .article-section h2 {
+            font-size: 2.5em;
+            border-bottom: 2px solid #ff512f;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        .article-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .article-card {
+            background: #2e2e3d;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .article-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+        }
+        .article-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        .article-content {
+            padding: 15px;
+        }
+        .article-content h3 {
+            margin: 0;
+            font-size: 1.5em;
+            color: #ff512f;
+        }
+        .article-content p {
+            color: #ccc;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading">
+        <div class="particles">
+            <div class="particle" style="top: 90%; left: 10%; animation-delay: 0s;"></div>
+        </div>
+        <h1>Loading AhmadXyz...</h1>
+    </div>
+
+    <header>
+        <h1>AhmadXyzID</h1>
+    </header>
+    <nav>
+        <a href="#articles">Artikel</a>
+        <a href="#downloads">Download Game</a>
+        <a href="#contact">Kontak</a>
+    </nav>
+
+    <!-- Artikel -->
+    <section id="articles" class="article-section">
+        <h2>Artikel Terkini</h2>
+        <div class="article-grid">
+            <div class="article-card"><!-- Artikel Minecraft -->
+<section id="articles" class="article-section">
+    <h2>Artikel Terkini Tentang Minecraft</h2>
+    <div class="article-grid">
+        <div class="article-card">
+            <img src="https://via.placeholder.com/400x200" alt="Minecraft Tips & Tricks">
+            <div class="article-content">
+                <h3>Tips & Trik Bertahan Hidup di Minecraft</h3>
+                <p>Untuk bertahan hidup di Minecraft, mulailah dengan mengumpulkan sumber daya seperti kayu, batu, dan makanan. Setelah itu, buatlah alat seperti kapak dan sekop dari kayu agar pengumpulan sumber daya lebih efisien. Penting juga untuk membangun tempat tinggal sebelum malam tiba agar aman dari monster.
+Selanjutnya, buat perapian untuk memasak makanan dan mencairkan bijih. Jelajahi lingkungan sekitar untuk menemukan sumber daya berharga seperti bijih besi dan batu bara. Berkebun juga sangat membantu, jadi tanam gandum dan sayuran untuk pasokan makanan yang berkelanjutan.
+Kumpulkan hewan untuk daging dan wol, serta simpan bahan-bahan untuk membuat ramuan. Menggunakan peta akan sangat membantu dalam menjelajahi dunia tanpa tersesat. Terakhir, pastikan untuk bersiap menghadapi malam dengan senjata dan perisai agar tetap aman.</p>
+            </div>
+        </div>
+        <div class="article-card">
+            <img src="https://via.placeholder.com/400x200" alt="Minecraft Mods">
+            <div class="article-content">
+                <h3>5 Mod Minecraft Paling Populer</h3>
+                <p>Beberapa mod Minecraft yang paling populer adalah OptiFine, yang meningkatkan kinerja dan grafis permainan, memberikan banyak opsi untuk penyesuaian visual. Ada juga Just Enough Items (JEI), yang memungkinkan pemain untuk melihat resep dan item dengan mudah.
+Biomes O' Plenty menambahkan banyak bioma baru yang menarik dan beragam, memperkaya pengalaman eksplorasi. Tinkers' Construct memungkinkan pemain untuk membuat alat dan senjata yang dapat disesuaikan dengan berbagai material. Terakhir, Minecraft Forge adalah platform yang memungkinkan pemain untuk menginstal dan mengelola berbagai mod dengan mudah. Semua mod ini sangat meningkatkan pengalaman bermain Minecraft!</p>
+            </div>
+        </div>
+        <div class="article-card">
+            <img src="https://via.placeholder.com/400x200" alt="Minecraft Updates">
+            <div class="article-content">
+                <h3>Update Terbaru Minecraft 2024</h3>
+                <p>Maaf, aku tidak memiliki informasi tentang update terbaru Minecraft di tahun 2024. Namun, biasanya, Mojang merilis pembaruan yang mencakup fitur baru, perbaikan bug, dan peningkatan gameplay. Untuk informasi terkini, kamu bisa cek situs resmi Minecraft atau forum komunitas.Tapi semua yang perlu Anda ketahui tentang fitur baru dan perubahan besar dalam pembaruan Minecraft tahun 2024!</p>
+            </div>
+        </div>
+        <div class="article-card">
+            <img src="https://via.placeholder.com/400x200" alt="Minecraft History">
+            <div class="article-content">
+                <h3>Sejarah Minecraft: Dari Beta hingga Kejayaan</h3>
+                <p>Minecraft dimulai sebagai proyek indie oleh Markus Persson, atau yang dikenal sebagai Notch, pada tahun 2009. Versi beta dirilis pada 2010, dan game ini mulai menarik perhatian banyak pemain dengan gameplay kreatif dan dunia terbuka. Setelah beberapa pembaruan dan penambahan fitur, Minecraft resmi dirilis pada 18 November 2011.
+Sejak saat itu, popularitasnya terus meningkat, dengan komunitas yang aktif dan banyak modifikasi yang dibuat oleh pemain. Pada tahun 2014, Mojang, pengembang Minecraft, diakuisisi oleh Microsoft, yang membantu memperluas jangkauan game ini ke platform lain dan meningkatkan dukungan pengembang.
+Dengan berbagai pembaruan dan acara, Minecraft tetap relevan dan terus berkembang, menjadikannya salah satu game terpopuler sepanjang masa. Komunitas yang kreatif dan beragam konten, seperti YouTube dan Twitch, turut berkontribusi pada kejayaannya.</p>
+            </div>
+        </div>
+        <div class="article-card">
+            <img src="https://via.placeholder.com/400x200" alt="Minecraft Building Tips">
+            <div class="article-content">
+                <h3>Tips Membangun Bangunan Epik di Minecraft</h3>
+                <p>Pelajari trik dan teknik untuk membuat bangunan yang menakjubkan di Minecraft, dari rumah sederhana hingga kastil megah.</p>
+            </div>
+        </div>
+        <div class="article-card">
+            <img src="https://via.placeholder.com/400x200" alt="Minecraft Multiplayer">
+            <div class="article-content">
+                <h3>Menikmati Minecraft di Mode Multiplayer</h3>
+                <p>Menikmati Minecraft di mode multiplayer sangat seru! Kamu bisa bermain bersama teman atau bergabung dengan server komunitas. Dalam mode ini, kamu bisa membangun, bertahan hidup, atau berkompetisi dengan pemain lain. Banyak server menawarkan mini-games, roleplay, dan petualangan yang menarik. Selain itu, berkolaborasi dengan teman untuk proyek besar atau menjelajahi dunia baru bisa jadi pengalaman yang tak terlupakan. Jangan lupa untuk berkomunikasi dan bersenang-senang!</p>
+            </div>
+        </div>
+        <div class="article-card">
+            <img src="https://via.placeholder.com/400x200" alt="Minecraft Survival Tips">
+            <div class="article-content">
+                <h3>Survival Mode Minecraft: Tips Bertahan Hidup</h3>
+                <p>Jangan takut lagi ketika malam datang! Berikut adalah beberapa tips penting untuk bertahan hidup di mode survival Minecraft.</p>
+            </div>
+        </div>
+        <div class="article-card">
+            <img src="https://via.placeholder.com/400x200" alt="Minecraft Texture Packs">
+            <div class="article-content">
+                <h3>Texture Packs Terbaik untuk Minecraft</h3>
+                <p>Upgrade tampilan Minecraft Anda dengan texture packs yang akan membawa visual game ini ke level berikutnya.</p>
+            </div>
+        </div>
+        <div class="article-card">
+            <img src="https://via.placeholder.com/400x200" alt="Minecraft Story">
+            <div class="article-content">
+                <h3>Menjelajahi Dunia Minecraft: Cerita dan Mitos</h3>
+                <p>Temukan kisah menarik yang ada di balik dunia Minecraft yang misterius, termasuk lore dan mitosnya.</p>
+            </div>
+        </div>
+        <div class="article-card">
+            <img src="https://via.placeholder.com/400x200" alt="Minecraft Skins">
+            <div class="article-content">
+                <h3>Skin Minecraft Terbaik 2024</h3>
+                <p>Berbagai skin Minecraft keren yang dapat mengubah penampilan karakter Anda dengan gaya terbaru!</p>
+            </div>
+        </div>
+        <div class="article-card">
+            <img src="https://via.placeholder.com/400x200" alt="Minecraft Community">
+            <div class="article-content">
+                <h3>Komunitas Minecraft: Pusat Kreativitas dan Kolaborasi</h3>
+                <p>Bagaimana komunitas Minecraft terus berkembang dan menghasilkan konten luar biasa untuk semua pemain!</p>
+            </div>
+        </div>
+        <div class="article-card">
+            <img src="https://via.placeholder.com/400x200" alt="Minecraft Mods for Survival">
+            <div class="article-content">
+                <h3>Mods Terbaik untuk Survival Minecraft</h3>
+                <p>Tambah tantangan baru di dunia survival Minecraft Anda dengan modifikasi unik yang dapat mengubah permainan Anda.</p>
+            </div>
+        </div>
+        <div class="article-card">
+            <img src="https://via.placeholder.com/400x200" alt="Minecraft Easter Eggs">
+            <div class="article-content">
+                <h3>Rahasia Minecraft: Easter Eggs yang Harus Kamu Temukan</h3>
+                <p>Pelajari beberapa easter eggs yang tersembunyi dalam Minecraft, dari fitur tersembunyi hingga referensi budaya pop!</p>
+            </div>
+        </div>
+        <div class="article-card">
+            <img src="https://via.placeholder.com/400x200" alt="Minecraft Building Challenges">
+            <div class="article-content">
+                <h3>5 Tantangan Pembangunan Minecraft yang Harus Kamu Coba</h3>
+                <p>Uji kreativitasmu dengan berbagai tantangan pembangunan di Minecraft yang akan mengasah keterampilanmu.</p>
+            </div>
+        </div>
+        <div class="article-card">
+            <img src="https://via.placeholder.com/400x200" alt="Minecraft Cross-Platform">
+            <div class="article-content">
+                <h3>Bagaimana Minecraft Memungkinkan Permainan Cross-Platform</h3>
+                <p>Jelajahi bagaimana Minecraft memungkinkan pemain dari berbagai platform untuk bermain bersama.</p>
+            </div>
+        </div>
+        <div class="article-card">
+            <img src="https://via.placeholder.com/400x200" alt="Minecraft Speedrun">
+            <div class="article-content">
+                <h3>Trik Minecraft Speedrun yang Harus Kamu Ketahui</h3>
+                <p>Ingin menjadi pemain Minecraft tercepat? Pelajari trik dan teknik untuk menyelesaikan permainan secepat mungkin!</p>
+            </div>
+        </div>
+        <div class="article-card">
+            <img src="https://via.placeholder.com/400x200" alt="Minecraft for Education">
+            <div class="article-content">
+                <h3>Minecraft dalam Pendidikan: Belajar dengan Cara yang Menyenangkan</h3>
+                <p>Temukan bagaimana Minecraft digunakan di sekolah-sekolah untuk mendidik siswa dengan cara yang menyenangkan dan kreatif.</p>
+            </div>
+        </div>
+        <div class="article-card">
+            <img src="https://via.placeholder.com/400x200" alt="Minecraft Realms">
+            <div class="article-content">
+                <h3>Apa Itu Minecraft Realms dan Mengapa Kamu Harus Menggunakannya?</h3>
+                <p>Jelajahi dunia Minecraft Realms, platform privat untuk bermain dengan teman-teman tanpa gangguan!</p>
+            </div>
+        </div>
+        <div class="article-card">
+            <img src="https://via.placeholder.com/400x200" alt="Minecraft Dungeons">
+            <div class="article-content">
+                <h3>Review: Minecraft Dungeons - Apakah Layak Dimainkan?</h3>
+                <p>Minecraft Dungeons adalah spin-off action RPG dari Minecraft. Apakah game ini memenuhi harapan? Baca ulasannya!</p>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+<section id="downloads" class="article-section">
+    <h2>Download Minecraft</h2>
+    <div class="article-grid">
+        <div class="article-card">
+            <img src="https://via.placeholder.com/400x200" alt="Minecraft Java Edition">
+            <div class="article-content">
+                <h3>Minecraft Java Edition</h3>
+                <p>Versi klasik untuk pengguna PC dengan fitur modding terbaik.</p>
+                <a href="https://www.minecraft.net/en-us/store/minecraft-java-edition" class="download-button" style="color: #ff512f;">Download</a>
+            </div>
+        </div>
+        <div class="article-card">
+            <img src="https://via.placeholder.com/400x200" alt="Minecraft Bedrock Edition">
+            <div class="article-content">
+                <h3>Minecraft Bedrock Edition</h3>
+                <p>Versi multi-platform untuk PC, konsol, dan mobile.</p>
+                <a href="https://www.minecraft.net/en-us/store/minecraft-bedrock-edition" class="download-button" style="color: #ff512f;">Download</a>
+            </div>
+        </div>
+        <div class="article-card">
+            <img src="https://via.placeholder.com/400x200" alt="Minecraft Dungeons">
+            <div class="article-content">
+                <h3>Minecraft Dungeons</h3>
+                <p>Game petualangan dungeon crawler dengan gaya Minecraft.</p>
+                <a href="https://www.minecraft.net/en-us/store/minecraft-dungeons" class="download-button" style="color: #ff512f;">Download</a>
+            </div>
+        </div>
+        <div class="article-card">
+            <img src="https://via.placeholder.com/400x200" alt="Minecraft Legends">
+            <div class="article-content">
+                <h3>Minecraft Legends</h3>
+                <p>Jelajahi dunia Minecraft dengan gameplay strategis baru.</p>
+                <a href="https://www.minecraft.net/en-us/store/minecraft-legends" class="download-button" style="color: #ff512f;">Download</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <footer>©AHMADxTreizker</footer>
+</body>
+</html>
