@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jasa Pembuatan Website dengan animasi dan gaya luar biasa. Dapatkan layanan terbaik untuk kebutuhan digital Anda!">
+    <title>Ahmadxyz Jasa Pembuatan Website</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+            overflow-x: hidden;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        h1, h2, h3 {
+            margin: 0;
+        }
+        header {
+            background: linear-gradient(to right, #1a1a2e, #0f3460);
+            color: #fff;
+            padding: 40px 10%;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        header::after {
+            content: "";
+            position: absolute;
+            width: 200%;
+            height: 100%;
+            top: 0;
+            left: -50%;
+            background: radial-gradient(circle, rgba(255,255,255,0.2), transparent);
+            animation: slide-bg 5s linear infinite;
+        }
+        @keyframes slide-bg {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(50%);
+            }
+        }
+        header h1 {
+            font-size: 3rem;
+            animation: fadeInDown 2s ease-in-out;
+        }
+        header p {
+            font-size: 1.2rem;
+            animation: fadeInUp 2s ease-in-out;
+        }
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #0f3460;
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        nav a {
+            color: #fff;
+            padding: 10px 20px;
+            transition: background 0.3s, color 0.3s;
+        }
+        nav a:hover {
+            background: #4caf50;
+            color: #fff;
+            border-radius: 5px;
+        }
+        section {
+            padding: 40px 10%;
+        }
+        .service-card {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            margin-bottom: 20px;
+            transform: scale(1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .service-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+        .service-card h2 {
+            margin-bottom: 10px;
+            color: #0f3460;
+        }
+        .service-card p {
+            margin: 10px 0 20px;
+            line-height: 1.6;
+        }
+        .service-card a {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #4caf50;
+            color: #fff;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .service-card a:hover {
+            background: #388e3c;
+        }
+        footer {
+            background: #1a1a2e;
+            color: #fff;
+            padding: 20px 10%;
+            text-align: center;
+        }
+        footer a {
+            color: #4caf50;
+        }
+        /* Animasi Scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Jasa Pembuatan Website, Dan Kebutuhan Hosting</h1>
+    <p>Hai Aku Adalah AhmadXyz Selamat Datang Di Webs Kami</p>
+</header>
+
+<nav>
+    <a href="#home">Beranda</a>
+    <a href="#services">Layanan</a>
+    <a href="tentang.html">Apa Itu Jasa Webs?</a>
+</nav>
+
+<section id="services">
+    <h2 style="text-align:center; margin-bottom: 20px;">Layanan Kami</h2>
+    <div class="service-card reveal">
+        <h2>Pembuatan Website</h2>
+        <p>Kami membantu Anda membuat website profesional dengan desain modern, fitur lengkap, dan responsif untuk semua perangkat.</p>
+        <a href="https://wa.me/6281527100923?text=Halo!%20Saya%20ingin%20bertanya%20tentang%20jasa%20pembuatan%20website.">Hubungi via WhatsApp</a>
+    </div>
+    <div class="service-card reveal">
+        <h2>Recode & Rename Sc Bot Wa</h2>
+        <p>Kami menyediakan layanan recode & rename bot WhatsApp</p>
+        <a href="https://wa.me/6281527100923?text=Halo!%20Saya%20ingin%20Rename%20atau%20recode%20bot%20Wa.">Hubungi via WhatsApp</a>
+    </div>
+    <div class="service-card reveal">
+        <h2>VPS (Virtual Private Server)</h2>
+        <p>Menyediakan VPS untuk kebutuhan Webstie dan digital Anda.</p>
+        <a href="https://wa.me/6281527100923?text=Halo!%20Saya%20ingin%20bertanya%20tentang%20VPS%20bang">Hubungi via WhatsApp</a>
+    </div>
+</section>
+
+<section id="about">
+    <h2 style="text-align:center; margin-bottom: 20px;">Tentang Kami</h2>
+    <p style="text-align:center;">Kami akan melakukan jasa dengan penuh rasa tanggung jawab dan melayani anda sebisa kami.</p>
+</section>
+
+<section id="contact">
+    <h2 style="text-align:center; margin-bottom: 20px;">Kontak Kami</h2>
+    <p style="text-align:center;">Siap memulai proyek Anda? Hubungi kami melalui WhatsApp atau email untuk diskusi lebih lanjut.</p>
+    <p style="text-align:center;"><strong>WhatsApp:</strong> <a href="https://wa.me/6281234567890">+6281527100923</a></p>
+    <p style="text-align:center;"><strong>Email:</strong> <a href="mailto:info@jasawebsite.com">ahmadlbk12345@gmail.com</a></p>
+</section>
+
+<footer>
+    <p>&copy; 2024 AHMADXYZ | Jasa Webs</p>
+</footer>
+
+<script>
+    // Animasi Scroll
+    const reveals = document.querySelectorAll('.reveal');
+    window.addEventListener('scroll', () => {
+        reveals.forEach((reveal) => {
+            const windowHeight = window.innerHeight;
+            const revealTop = reveal.getBoundingClientRect().top;
+            const revealPoint = 150;
+            if (revealTop < windowHeight - revealPoint) {
+                reveal.classList.add('active');
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
